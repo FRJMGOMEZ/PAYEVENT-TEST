@@ -1,0 +1,33 @@
+<div *ngIf="!_userService.user" class="row">
+    <div class="col-12 card-group">
+        <div *ngFor="let user of _userService.users" class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-8">
+                                <img [src]="user.avatar" alt="">
+                            </div>
+                            <div class="col-4 d-flex flex-column justify-content-around">
+                                <p>{{user.first_name}} {{user.last_name}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <P> {{user.email}}</P>
+                                <a (click)="navigateToUser(user['id'])">VER MÁS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" col-12 d-flex justify-content-around">
+        <div (click)='switchPage(1)'> <button>1</button> </div>
+        <div (click)='switchPage(2)'> <button>2</button> </div>
+        <div (click)='switchPage(3)'> <button>3</button></div>
+        <div (click)='switchPage(4)'> <button>4</button></div>
+    </div>
+</div>
+<app-user *ngIf="_userService.user"></app-user>

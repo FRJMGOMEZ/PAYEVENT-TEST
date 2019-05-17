@@ -1,0 +1,31 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-12">
+                                <img [src]="_userService.user.avatar" alt="">
+                            </div>
+                            <div class="col-12 d-flex flex-column">
+                                <div>
+                                    NAME:{{_userService.user.first_name}}
+                                </div>
+                                <div>
+                                    LAST NAME:{{_userService.user.last_name}}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                CONTACT DETAILS: {{_userService.user.email}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    <button (click)="_userService.user = undefined">BACK</button>
+</div>

@@ -24,7 +24,6 @@ export class UserComponent implements OnInit {
   }
 
   toPages(){
-    
      this.router.navigate(['users']).then(()=>{
        this._userService.user = undefined;
      })
